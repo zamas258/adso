@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font */
+    background-color: #e0f2f7; /* Lighter, calming background */
+    margin: 0;
+    padding: 20px;
+    display: flex; /* Centering the form */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+}
+
+h1 {
+    color: #2c3e50; /* Darker, more prominent heading color */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+form {
+    background: #ffffff;
+    padding: 40px; /* Increased padding for more breathing room */
+    border-radius: 10px; /* More rounded corners */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Stronger, more defined shadow */
+    max-width: 500px; /* Limiting form width for better readability */
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+p {
+    margin: 20px 0 10px 0; /* Adjusted margins for better spacing */
+    color: #555;
+    font-weight: bold; /* Make labels bolder */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: calc(100% - 22px); /* Account for padding and border */
+    padding: 12px; /* Slightly more padding for input fields */
+    border: 1px solid #a7d9ed; /* Lighter border color */
+    border-radius: 6px; /* Slightly more rounded input fields */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on focus */
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #3498db; /* Highlight border on focus */
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3); /* Subtle shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+input[type="radio"] {
+    margin-right: 8px; /* More space for radio buttons */
+    transform: scale(1.2); /* Slightly larger radio buttons */
+}
+
+/* Optional: Add a submit button style */
+button[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 25px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+    </style>
+</head>
+<body>
+    <form action="">
+        <h1>Formulario Robin</h1>
+        <p>Nombre: <input type="text" required></p>
+        <p>Apellido: <input type="text" required></p>
+        <p>Edad: <input type="number" required></p>
+        <p>Genero: <input type="radio" name="genero" value="Hombre" required> Hombre
+        <input type="radio" name="genero" value="Mujer" required> Mujer
+        <input type="radio" name="genero" value="mk" required> MK
+        </p>
+        <p>Correo: <input type="email" required></p>
+        <p>Tipo de documento: 
+            <br><input type="radio" name="tipo-documento" value="CC" required> Cedula de Ciudadania
+            <br>
+                            <input type="radio" name="tipo-documento" value="TI" required>Targeta de identidad
+                            <br>
+                            <input type="radio" name="tipo-documento" value="pasaporte" required>Pasaporte
+        </p>
+        <p>Numero Documento: <input type="text" required></p>
+        <p>Direccion: <input type="text" required></p>
+        <p>Telefono: <input type="number" required></p>
+        <p>Ciudad: <input type="text" required></p>
+        <p>Departamento: <label for="departamento">Departamento:</label>
+<select id="departamento" name="departamento" required>
+                                <option value="Amazonas">Amazonas</option>
+                                <option value="Antioquia">Antioquia</option>
+                                <option value="Arauca">Arauca</option>
+                                <option value="Atlántico">Atlántico</option>
+                                <option value="Bolívar">Bolívar</option>
+                                <option value="Boyacá">Boyacá</option>
+                                <option value="Caldas">Caldas</option>
+                                <option value="Caquetá">Caquetá</option>
+                                <option value="Casanare">Casanare</option>
+                                <option value="Cauca">Cauca</option>
+                                <option value="Cesar">Cesar</option>
+                                <option value="Chocó">Chocó</option>
+                                <option value="Córdoba">Córdoba</option>
+                                <option value="Cundinamarca">Cundinamarca</option>
+                                <option value="Guainía">Guainía</option>
+                                <option value="Guaviare">Guaviare</option>
+                                <option value="Huila">Huila</option>
+                                <option value="La Guajira">La Guajira</option>
+                                <option value="Magdalena">Magdalena</option>
+                                <option value="Meta">Meta</option>
+                                <option value="Nariño">Nariño</option>
+                                <option value="Norte de Santander">Norte de Santander</option>
+                                <option value="Putumayo">Putumayo</option>
+                                <option value="Quindío">Quindío</option>
+                                <option value="Risaralda">Risaralda</option>
+                                <option value="San Andrés y Providencia">San Andrés y Providencia</option>
+                                <option value="Santander">Santander</option>
+                                <option value="Sucre">Sucre</option>
+                                <option value="Tolima">Tolima</option>
+                                <option value="Valle del Cauca">Valle del Cauca</option>
+                                <option value="Vaupés">Vaupés</option>
+                                <option value="Vichada">Vichada</option>
+</select></p>
+<p><input type="submit" value="Enviar"></p>
+    </form>
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Formulario enviado");
+        });
+    </script>
+</body>
+</html>
